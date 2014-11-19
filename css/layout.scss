@@ -1,0 +1,31 @@
+---
+---
+@import 'lib/normalize';
+@import 'lib/animations';
+
+$backgroundColor:#DDDD90;
+
+body {
+  background:$backgroundColor;
+}
+
+#Site {
+  display:flex;
+  display:-webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  min-height:100vh;
+  padding:0 20px;
+}
+
+#Logo {
+  align-self: center;
+  -webkit-align-self:center;
+  width:100%;
+  background: url(img/bowlingx_rot.svg) no-repeat;
+  background-size:100% 100%;
+  text-indent: -9999px;
+  height:150px;
+  @extend .animated;
+  @extend .bounceInDown;
+}
