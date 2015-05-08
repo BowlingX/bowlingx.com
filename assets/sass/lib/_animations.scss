@@ -1,0 +1,99 @@
+.logo-item {
+  opacity: 0;
+}
+
+// full time of animation
+$logoAnimationTime: 2.2s;
+$logoWidth: 600px;
+
+// letters to animate
+$letters: b o w l i n g;
+
+#Logo {
+  align-self: center;
+  width: $logoWidth;
+}
+
+@function easeInOutQuint($t, $b, $c, $d) {
+  $t: $t/($d/2);
+  @if ($t < 1) {
+    @return ($c/2*$t*$t*$t*$t*$t + $b);
+  } @else {
+    $t: $t - 2;
+    @return $c/2*(($t)*$t*$t*$t*$t + 2) + $b;
+  }
+}
+@function easeOutQuad($t, $b, $c, $d) {
+  $t: $t/$d;
+  @return -$c *$t*($t - 2) + $b;
+}
+
+.logo-x {
+  opacity: 1;
+  @include animate(logo-x, $logoAnimationTime);
+  transform-origin: center;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backface-visibility: hidden;
+}
+
+@for $i from 1 to length($letters)  +1 {
+  $letter: nth($letters, $i);
+  $length: length($letters);
+  @debug $letter;
+  $time:easeOutQuad($i, 0, 1, $length);
+  .logo-#{$letter} {
+    @include animate(letter, .5s);
+    animation-delay: easeOutQuad($i, .3, 1, $length)*2s - 1s;
+  }
+}
+
+// Animation for X
+@include keyframes(logo-x) {
+
+  from {
+    transform: translate3d(-#{$logoWidth}, 0, 0) rotate3d(0, 0, 1, -720deg);
+  }
+  to {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@include keyframes(letter) {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

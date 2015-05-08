@@ -1,0 +1,25 @@
+@import 'flexcss/assets/settings';
+@import 'flexcss/assets/lib/mixins';
+
+@import 'lib/normalize';
+@import 'lib/animations';
+
+
+$backgroundColor:#DDDD90;
+
+body {
+  background:$backgroundColor;
+}
+
+#Site {
+  display:flex;
+  min-height:100vh;
+  padding:0 20px;
+  justify-content:center
+}
+
+
+.logo-item {
+  @extend .animated;
+  @extend .bounceInDown;
+}
