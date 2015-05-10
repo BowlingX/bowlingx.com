@@ -1,25 +1,28 @@
-@import 'flexcss/assets/settings';
-@import 'flexcss/assets/lib/mixins';
+$backgroundColor:#fff;
+$brandPrimary: #D95151;
+@import 'settings';
+@import 'flexcss/assets/layout';
+@import 'flexcss/assets/lib/themes/fullwidth/grid';
+@import 'lib/darkener';
+@import 'lib/header';
 
-@import 'lib/normalize';
-@import 'lib/animations';
-
-
-$backgroundColor:#DDDD90;
 
 body {
   background:$backgroundColor;
 }
 
-#Site {
-  display:flex;
-  min-height:100vh;
-  padding:0 20px;
-  justify-content:center
+.font-large {
+  font-size:2rem;
 }
 
+@media #{$mediaDesktop} {
+  .page-content {
+    padding: 60px 20px;
+  }
+}
 
-.logo-item {
-  @extend .animated;
-  @extend .bounceInDown;
+.footer {
+  background:$brandPrimary;
+  color:#fff;
+  padding:20px 0;
 }

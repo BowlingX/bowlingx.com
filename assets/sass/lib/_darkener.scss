@@ -1,0 +1,19 @@
+/**
+* Managing Darkener Instances
+*/
+
+.toggled-canvas .darkener {
+  display: none;
+}
+
+.toggle-SidebarDarkener #SidebarDarkener {
+  display:block;
+}
+
+.toggle-DropdownDarkener #DropdownDarkener {
+  display:block;
+}
+
+.toggle-share-button-darkener-container #share-button-darkener-container {
+  display: block;
+}

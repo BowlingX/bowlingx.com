@@ -39,7 +39,6 @@ $letters: b o w l i n g;
 @for $i from 1 to length($letters)  +1 {
   $letter: nth($letters, $i);
   $length: length($letters);
-  @debug $letter;
   $time:easeOutQuad($i, 0, 1, $length);
   .logo-#{$letter} {
     @include animate(letter, .5s);

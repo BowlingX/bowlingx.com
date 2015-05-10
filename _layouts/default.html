@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BowlingX.com – {{page.title}}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/build/css/layout.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+</head>
+<body>
+<header id="Header" class="header">
+    <div id="TopBar" class="topbar">
+        <a data-offcanvas="MainNavigation" class="icon-menu topbar-action navigation-toggler">
+            <span>A second item</span>
+        </a>
+        <a class="right icon-mail-alt topbar-action messages" href="/account/messages">
+        </a>
+    </div>
+    <nav id="MainNavigation" class="navbar-main" role="navigation">
+        <div class="home single-column">
+            <a class="logo" href="/">Service</a>
+        </div>
+        {% assign pages = site.pages | sort:"weight" %}
+        {% assign url = page.url %}
+
+        <ul class="main-nav">
+            {% for p in pages %}
+            <li {% if p.url == url %}class="active" {% endif %}>
+                <a href="{{ site.baseurl }}{{ p.url }}">
+                    {{ p.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="right-nav">
+            <li>
+                <a class="font-large" href="#logout"><i class="icon-github-circled"></i></a>
+            </li>
+            <li>
+                <a class="font-large" href="#logout"><i class="icon-twitter"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <div id="SidebarDarkener" class="darkener"></div>
+    <div id="DropdownDarkener" class="darkener"></div>
+</header>
+<main class="overall-wrapper main" role="main">
+    <div id="SubnavDarkener" class="subnav-darkener darkener init"></div>
+    <div class="content-wrapper">
+        <div class="wrapper wrapper-center">
+            <div class="page-content">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>A Footer</p>
+    </footer>
+</main>
+<script src="{{ site.baseurl }}/build/js/app.min.js"></script>
+</body>
+</html>

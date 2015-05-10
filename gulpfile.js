@@ -42,7 +42,7 @@ var sass = require('gulp-sass');
 var paths = {
     exports: ['src/app.js'],
     images: ['assets/img/**/*', 'themes/img/**/*'],
-    fonts: 'assets/fonts/**/*',
+    fonts: ['assets/fonts/**/*', 'node_modules/flexcss/assets/fonts/**/**.*'],
     sass: 'assets/sass/**/*.scss',
     // Karma config file
     buildPath:'build/'

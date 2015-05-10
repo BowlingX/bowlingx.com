@@ -1,3 +1,3 @@
 permalink:        pretty
 
-exclude: ['src', 'scripts', 'assets', 'node_modules', 'bower_components', 'coverage','examples']
+exclude: ['.idea', 'src', 'scripts', 'assets', 'node_modules', 'bower_components', 'coverage','examples']

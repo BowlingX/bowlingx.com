@@ -1,0 +1,60 @@
+@media #{$mediaDesktop} {
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+
+  .right-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    a {
+      line-height: 4rem !important;
+    }
+  }
+
+  ul.main-nav li {
+
+    &:not(:last-of-type) {
+      margin-right:3rem;
+    }
+    a:after {
+      content: ' ';
+      border-bottom: 5px solid $brandPrimary;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform $globalShortEaseTime ease, opacity $globalShortEaseTime ease;
+    }
+
+    &:hover, &.active {
+      a:after {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    a:not(.button) {
+      line-height: 50px;
+    }
+  }
+  .home {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: $topbarHeight - 50px;
+    align-items: center;
+    pointer-events: none;
+    z-index: 0;
+    .logo {
+      margin-left: 0;
+      width: 300px;
+      height: 100%;
+    }
+  }
+}
