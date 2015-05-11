@@ -30,10 +30,16 @@ body {
 }
 
 .topbar {
-  background: url(../img/bowlingx-pin.svg) no-repeat center;
-  background-size:65% 65%;
+  background: url(../img/bowlingx-pin.svg) no-repeat center 8px;
+  background-size:90% 90%;
 }
 
+.topbar-action {
+  font-size:1.5rem;
+}
+.topbar-action.right {
+  margin-left:2rem;
+}
 // page footer
 .footer {
   background:$brandPrimary;
