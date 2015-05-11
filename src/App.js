@@ -39,7 +39,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
                    opacity   = 1 - opacityEase,
                    move     = easeInQuad(scrollTop, 0, 50, maxScroll),
                    moveIn   = 50 -easeInQuad(scrollTop, 0, 50, maxScroll),
-                   angel    = easeInQuad(scrollTop, 0, 10, maxScroll);
+                   angel    = easeInQuad(scrollTop, 0, 12, maxScroll);
 
             // 2) apply to styles
             header.style.cssText += `
@@ -52,8 +52,8 @@ global.document.addEventListener('DOMContentLoaded', () => {
 
             logoBar.style.cssText += `
             opacity:${opacityEase};
-            transform:translate3d(0,${moveIn}px,0) rotate(${angel*-1}deg);
-            -webkit-transform:translate3d(0,${moveIn}px,0) rotate(${angel*-1}deg);`;
+            transform:translateY(${moveIn}px) rotate(${angel*-1}deg) scale(.93);
+            -webkit-transform:translateY(${moveIn}px) rotate(${angel*-1}deg) scale(.93);`;
         });
     }
 
