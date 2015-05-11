@@ -71,3 +71,16 @@
   }
 
 }
+
+.header {
+  &:before {
+    content:' ';
+    background-color: $brandPrimary;
+    background-image: linear-gradient(90deg,transparent 50%,rgba(255,255,255,.5) 50%);
+    background-size: 50px 50px;
+    width: 100%;
+    height: 5px;
+    top: 0;
+    position: absolute;
+  }
+}
