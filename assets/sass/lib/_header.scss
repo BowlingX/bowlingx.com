@@ -10,8 +10,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    a {
+    a:not(.button) {
       line-height: 4rem !important;
+      font-weight:normal;
     }
   }
 
@@ -40,6 +41,8 @@
     }
     a:not(.button) {
       line-height: 50px;
+      font-weight:normal;
+
     }
   }
   .home {
@@ -47,14 +50,23 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: $topbarHeight - 50px;
+    height: $topbarHeightDesktop - 50px;
     align-items: center;
-    pointer-events: none;
     z-index: 0;
     .logo {
       margin-left: 0;
       width: 300px;
       height: 100%;
+    }
+
+    .logo-bar {
+      background-image:url(../img/bowlingx-pin.svg) !important;
+      width: 50px;
+      position: absolute;
+      left: 10px;
+      bottom: -$topbarHeight - 15px;
+      height: $topbarHeight + 10px;
+      transform:translate3d(0, 100%,0);
     }
   }
 }

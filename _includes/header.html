@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BowlingX.com – {{page.title}}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/build/css/layout.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+</head>
+<body>
+<header id="Header" class="header">
+    <div id="TopBar" class="topbar">
+        <a data-offcanvas="MainNavigation" class="icon-menu topbar-action navigation-toggler">
+            <span>{{page.title}}</span>
+        </a>
+        <a class="right icon-github-circled topbar-action messages" href="https://github.com/BowlingX"></a>
+        <a class="right icon-twitter topbar-action messages" href="https://twitter.com/BowlingX"></a>
+
+    </div>
+    <nav id="MainNavigation" class="navbar-main" role="navigation">
+        <div class="home single-column">
+            <a id="Logo" class="logo" href="/">bowlingx.com</a>
+            <a id="Logo-bar" class="logo-bar logo hide-small" href="/">bowlingx.com</a>
+        </div>
+        {% assign pages = site.pages | sort:"weight" %}
+        {% assign url = page.url %}
+
+        <ul class="main-nav">
+            {% for p in pages %}
+            {% if p.weight > 0 %}
+            <li {% if p.url == url %}class="active" {% endif %}>
+                <a href="{{ site.baseurl }}{{ p.url }}">
+                    {{ p.title }}
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul class="right-nav hide-small">
+            <li>
+                <a class="font-large"  href="https://github.com/BowlingX"><i class="icon-github-circled"></i></a>
+            </li>
+            <li>
+                <a class="font-large" href="https://twitter.com/BowlingX"><i class="icon-twitter"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <div id="SidebarDarkener" class="darkener"></div>
+    <div id="DropdownDarkener" class="darkener"></div>
+</header>
+<main class="overall-wrapper main" role="main">
+    <div id="SubnavDarkener" class="subnav-darkener darkener init"></div>

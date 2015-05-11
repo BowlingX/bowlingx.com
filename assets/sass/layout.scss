@@ -1,8 +1,16 @@
 $backgroundColor:#fff;
 $brandPrimary: #D95151;
 @import 'settings';
-@import 'flexcss/assets/layout';
+@import 'flexcss/assets/base';
+@import "flexcss/assets/lib/text";
+@import "flexcss/assets/lib/grid";
+@import "flexcss/assets/lib/navigation";
+@import "flexcss/assets/lib/desktop-grid";
+@import "flexcss/assets/lib/large-grid";
+@import "flexcss/assets/lib/visibility";
+
 @import 'flexcss/assets/lib/themes/fullwidth/grid';
+
 @import 'lib/darkener';
 @import 'lib/header';
 
@@ -21,8 +29,51 @@ body {
   }
 }
 
+.topbar {
+  background: url(../img/bowlingx-pin.svg) no-repeat center;
+  background-size:65% 65%;
+}
+
+// page footer
 .footer {
   background:$brandPrimary;
   color:#fff;
   padding:20px 0;
+  a {
+    @include link-color(lighten($brandPrimary, 25%));
+    border-bottom:none;
+  }
+}
+
+// links in paragraphs
+p {
+  a {
+    border-bottom:2px solid rgba($primaryColor, .3);
+    transition:color $globalShortEaseTime ease, border-color $globalShortEaseTime ease;
+    &:hover {
+      border-bottom-color: rgba($primaryColor, .8);
+    }
+  }
+}
+
+// headline following a paragraph
+p + h2 {
+  margin-top:2rem;
+}
+
+// basic grid for desktop
+@media #{$mediaDesktop} {
+
+  .flex {
+    display:flex;
+    flex-direction: row;
+  }
+  .first-column {
+    max-width: calc(75% - 1rem);
+    margin-right:1rem;
+  }
+
+  .second-column {
+    max-width:25%;
+  }
 }

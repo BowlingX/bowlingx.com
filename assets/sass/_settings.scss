@@ -9,9 +9,12 @@ $MainNavigationBg: #4a4a4a !default;
 $subnavColor: #616161 !default;
 
 // height of topbar
-$topbarHeight: 200px !default;
+$topbarHeight: 50px !default;
+$topbarHeightDesktop: 200px !default;
 $tabHeight: 40px !default;
-$topbarBg:#444 !default;
+//$topbarBg:linear-gradient(to bottom, rgba(#333,1) 0%,rgba(#444,1) 100%) !default;
+$topbarBg:#333!default;
+
 $topbarColor:#aaa !default;
 $topBarFontSize:18px !default;
 $topbarColorWide:#aaa !default;
@@ -242,3 +245,4 @@ $listingSmallWidth: 30%;
 
 // panel
 $panelBackground: $lightGrayColor;
+$linkFontWeight: normal;
