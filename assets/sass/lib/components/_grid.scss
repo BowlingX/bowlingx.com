@@ -1,0 +1,17 @@
+
+// basic grid for desktop
+@media #{$mediaDesktop} {
+
+  .flex {
+    display:flex;
+    flex-direction: row;
+  }
+  .first-column {
+    max-width: calc(75% - 1rem);
+    margin-right:1rem;
+  }
+
+  .second-column {
+    max-width:25%;
+  }
+}

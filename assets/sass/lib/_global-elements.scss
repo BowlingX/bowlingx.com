@@ -1,0 +1,35 @@
+body {
+  background:$backgroundColor;
+}
+
+// page footer
+.footer {
+  background:$brandPrimary;
+  color:#fff;
+  padding:20px 0;
+  a {
+    @include link-color(lighten($brandPrimary, 25%));
+    border-bottom:none;
+  }
+}
+
+// links in paragraphs
+p {
+  a {
+    border-bottom:2px solid rgba($primaryColor, .3);
+    transition:color $globalShortEaseTime ease, border-color $globalShortEaseTime ease;
+    &:hover {
+      border-bottom-color: rgba($primaryColor, .8);
+    }
+  }
+}
+
+// headline following a paragraph
+p + h2 {
+  margin-top:2rem;
+}
+
+
+.font-large {
+  font-size:2rem;
+}

@@ -1,3 +1,17 @@
+
+.topbar {
+  background: url(../img/bowlingx-pin.svg) no-repeat center 8px;
+  background-size: 90% 90%;
+}
+
+.topbar-action {
+  font-size: 1.5rem;
+}
+
+.topbar-action.right {
+  margin-left: 2rem;
+}
+
 @media #{$mediaDesktop} {
   .main-nav {
     display: flex;
@@ -12,14 +26,14 @@
     right: 0;
     a:not(.button) {
       line-height: 4rem !important;
-      font-weight:normal;
+      font-weight: normal;
     }
   }
 
   ul.main-nav li {
 
     &:not(:last-of-type) {
-      margin-right:3rem;
+      margin-right: 3rem;
     }
     a:after {
       content: ' ';
@@ -41,7 +55,7 @@
     }
     a:not(.button) {
       line-height: 50px;
-      font-weight:normal;
+      font-weight: normal;
 
     }
   }
@@ -60,21 +74,21 @@
     }
 
     .logo-bar {
-      background-image:url(../img/bowlingx-pin.svg) !important;
+      background-image: url(../img/bowlingx-pin.svg) !important;
       width: 50px;
       position: absolute;
       left: 10px;
       bottom: -$topbarHeight - 15px;
       height: $topbarHeight + 10px;
-      transform:translate3d(0, 100%,0);
+      transform: translate3d(0, 100%, 0);
     }
   }
 
   .header {
     &:before {
-      content:' ';
+      content: ' ';
       background-color: $brandPrimary;
-      background-image: linear-gradient(90deg,transparent 50%,rgba(255,255,255,.5) 50%);
+      background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, .5) 50%);
       background-size: 50px 50px;
       width: 100%;
       height: 5px;

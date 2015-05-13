@@ -1,13 +1,35 @@
 ---
-layout: default
+layout: front-page
 title: Home
 weight: 1
+class: front-page
 ---
 
 
-<div class="wrapper wrapper-center">
-  <div class="page-content">
-      
-  </div>
-</div>
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
+# Content
+
 
