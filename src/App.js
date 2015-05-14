@@ -20,6 +20,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
     // easing vars:
         scrollDownHeroDuration = isSmall ? headerHeight * 20 : headerHeight * 2,
         scrollDownHeroMax = 320;
+        let lastSiteHeight = window.innerHeight;
 
     // easing function to use for parallax effects
     function easeInQuad(t, b, c, d) {
@@ -47,6 +48,14 @@ global.document.addEventListener('DOMContentLoaded', () => {
             let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
             scrollTop = Math.max(scrollTop < maxScroll ? scrollTop : maxScroll, 0);
 
+
+            if(lastSiteHeight !== siteHeight) {
+                header.style.cssText += 'transition:transform .2s ease;-webkit-transition:-webkit-transform .2s ease;';
+            } else {
+                header.style.cssText += 'transition:transform 0s ease;-webkit-transition:-webkit-transform 0s ease;';
+            }
+
+            lastSiteHeight = siteHeight;
             // 1) parallax calculations
             const opacityEase = easeInQuad(scrollTop, 0, 1, maxScroll),
                 opacity = 1 - opacityEase,
