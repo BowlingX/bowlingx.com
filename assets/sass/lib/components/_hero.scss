@@ -2,9 +2,48 @@
 * Hero Unit
 */
 
+.hero-content {
+  opacity:0;
+  transition:opacity 1s ease;
+
+  h1 {
+    opacity:0;
+  }
+}
+
+.hero-page {
+  &:before {
+    content: ' ';
+    position: fixed;
+    top:0;
+    width:100%;
+    background:$brandPrimary;
+    height:5px;
+    z-index:1;
+    @include animate(preloadHalf, 1s);
+  }
+}
+
+.composition-ready {
+  .hero-content {
+    opacity:1;
+    transition:opacity 0s ease;
+
+    h1 {
+      @include animate(textDrop, .5s);
+      animation-delay: .7s;
+    }
+  }
+  .hero-page {
+    &:before {
+      @include animate(preloadFull, 1s);
+    }
+  }
+}
+
 .hero {
+  background:$brandSecondary;
   min-height: 100vh;
-  background: #D2D98D;
   position: fixed;
   width: 100%;
   display: flex;

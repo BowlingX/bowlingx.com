@@ -31,6 +31,11 @@ global.document.addEventListener('DOMContentLoaded', () => {
         return -c * (t /= d) * (t - 2) + b;
     }
 
+    // detect animation ready
+    document.addEventListener('compositionReady', () => {
+        document.documentElement.classList.add('composition-ready');
+    }, true);
+
     function initScroll() {
         requestAnimationFrame(() => {
             // 0) calculations based on scrollTop
@@ -64,6 +69,8 @@ global.document.addEventListener('DOMContentLoaded', () => {
                 -webkit-transform:translate3d(0,${scrollDownHeroContent}px,0);
                 opacity:${heroOpacity};`;
             }
+
+            // b) if the screen is not small, we move the logo around
             if(!isSmall) {
                 logo.style.cssText += `opacity:${opacity};
                 transform:translate3d(0,${move}px,0);
