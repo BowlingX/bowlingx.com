@@ -20,7 +20,7 @@
   overflow: hidden;
 }
 
-.front-page .header {
+.hero-page .header {
   top: 100vh;
 }
 
@@ -29,17 +29,17 @@
   max-width: 470px;
 }
 
-.front-page header + .overall-wrapper > .content-wrapper .wrapper-center {
+.hero-page header + .overall-wrapper > .content-wrapper .wrapper-center {
   margin-top: calc(100vh + #{$topbarHeight});
 }
 
-.front-page .topbar {
+.hero-page .topbar {
   background: $topbarBg;
 }
 
 @media #{$mediaSmall} {
   // fix for android header in the bottom when scrolling
-  .front-page .header {
+  .hero-page .header {
     background: transparent;
   }
 }
@@ -49,7 +49,7 @@
   .hero h1 {
     max-width: 50%;
   }
-  .front-page header + .overall-wrapper > .content-wrapper .wrapper-center {
+  .hero-page header + .overall-wrapper > .content-wrapper .wrapper-center {
     margin-top: calc(100vh + #{$topbarHeightDesktop});
   }
 }

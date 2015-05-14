@@ -6,7 +6,6 @@ global.document.addEventListener('DOMContentLoaded', () => {
     // Create of canvas navigation
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
 
-    // init forms
     const
         desktopBreakpoint = 768,
         isSmall = window.innerWidth < desktopBreakpoint,
@@ -17,7 +16,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
         heroContent = document.getElementById('HeroContent'),
         headerNavHeight = 50,
         headerHeight = header.getBoundingClientRect().height,
-        isFrontPage = document.body.classList.contains('front-page'),
+        isHeroPage = document.body.classList.contains('hero-page'),
     // easing vars:
         scrollDownHeroDuration = isSmall ? headerHeight * 20 : headerHeight * 2,
         scrollDownHeroMax = 320;
@@ -39,7 +38,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
             // the viewport changes when scrolling:
 
             const siteHeight = window.innerHeight,
-                maxScroll = isFrontPage ? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight;
+                maxScroll = isHeroPage ? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight;
             let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
             scrollTop = Math.max(scrollTop < maxScroll ? scrollTop : maxScroll, 0);
 
@@ -53,8 +52,8 @@ global.document.addEventListener('DOMContentLoaded', () => {
             // a) if there exists an hero page before
             if (hero && heroContent) {
                 const startZero = Math.max(scrollTop - headerHeight, 0),
-                    scrollTopHero = isSmall ? startZero : easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
-                    opacity = 1 - easeOutQuad(startZero, 0, 1, isSmall ? maxScroll * 1.5 : maxScroll);
+                    scrollTopHero = isSmall ? startZero +1 : easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
+                    heroOpacity = 1 - easeOutQuad(startZero, 0, 1, isSmall ? maxScroll * 1.5 : maxScroll);
                 hero.style.cssText += `
                 transform:translate3d(0,-${scrollTopHero}px,0);
                 -webkit-transform:translate3d(0,-${scrollTopHero}px,0);`;
@@ -63,13 +62,14 @@ global.document.addEventListener('DOMContentLoaded', () => {
                 heroContent.style.cssText += `
                 transform:translate3d(0,${scrollDownHeroContent}px,0);
                 -webkit-transform:translate3d(0,${scrollDownHeroContent}px,0);
-                opacity:${opacity};`;
+                opacity:${heroOpacity};`;
             }
             if(!isSmall) {
                 logo.style.cssText += `opacity:${opacity};
                 transform:translate3d(0,${move}px,0);
                 -webkit-transform:translate3d(0,${move}px,0);`;
 
+                // we scale down the logo a little bit so it does not appear blurry in chrome
                 logoBar.style.cssText += `
             opacity:${opacityEase};
             transform:translateY(${moveIn}px) rotate(${angel * -1}deg) scale(.93);
