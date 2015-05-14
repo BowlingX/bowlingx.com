@@ -113,12 +113,12 @@
   }
 }
 
-@media all and (orientation:landscape) {
+@media (orientation:landscape) {
   .animation-wrapper {
     max-width: 250px;
   }
   .hero h1 {
-    max-width: 50%;
+    max-width: 75%;
     margin-top:0;
     font-size: $baseFontSize;
   }
