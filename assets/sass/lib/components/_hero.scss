@@ -112,3 +112,14 @@
     margin-top: calc(100vh + #{$topbarHeightDesktop});
   }
 }
+
+@media all and (orientation:landscape) {
+  .animation-wrapper {
+    max-width: 250px;
+  }
+
+  .hero h1 {
+    margin-top:0rem;
+    font-size: $baseFontSize;
+  }
+}
