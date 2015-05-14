@@ -32,6 +32,10 @@
   margin-top:calc(100vh + #{$topbarHeight});
 }
 
+.front-page .topbar {
+  background:$topbarBg;
+}
+
 @media #{$mediaDesktop} {
 
   .hero h1 {

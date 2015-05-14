@@ -7,7 +7,10 @@ global.document.addEventListener('DOMContentLoaded', () => {
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
 
     // init forms
-    const header          = document.getElementById('Header'),
+    const
+        desktopBreakpoint = 768,
+        isSmall           = window.innerWidth < desktopBreakpoint,
+        header          = isSmall ? document.getElementById('TopBar') : document.getElementById('Header'),
         logoBar           = document.getElementById('Logo-bar'),
         logo              = document.getElementById('Logo'),
         hero              = document.getElementById('Hero'),
@@ -17,8 +20,6 @@ global.document.addEventListener('DOMContentLoaded', () => {
         isFrontPage       = document.body.classList.contains('front-page'),
         siteHeight        = window.innerHeight,
         maxScroll         = isFrontPage? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight,
-        desktopBreakpoint = 768,
-        isSmall           = window.innerWidth < desktopBreakpoint,
         // easing vars:
         scrollDownHeroDuration = isSmall ? headerHeight*10 : headerHeight * 2,
         scrollDownHeroMax      = isSmall ? 60 : 320,
