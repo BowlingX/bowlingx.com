@@ -18,9 +18,9 @@ global.document.addEventListener('DOMContentLoaded', () => {
         headerNavHeight = 50,
         headerHeight = header.getBoundingClientRect().height,
         isFrontPage = document.body.classList.contains('front-page'),
-        // easing vars:
-        scrollDownHeroDuration = isSmall ? headerHeight * 10 : headerHeight * 2,
-        scrollDownHeroMax = isSmall ? 60 : 320;
+    // easing vars:
+        scrollDownHeroDuration = isSmall ? headerHeight * 20 : headerHeight * 2,
+        scrollDownHeroMax = 320;
 
     // easing function to use for parallax effects
     function easeInQuad(t, b, c, d) {
@@ -34,6 +34,10 @@ global.document.addEventListener('DOMContentLoaded', () => {
 
     function initScroll() {
         requestAnimationFrame(() => {
+            // 0) calculations based on scrollTop
+            // unfortunately we need to request the inner height here because on android/ios devices
+            // the viewport changes when scrolling:
+
             const siteHeight = window.innerHeight,
                 maxScroll = isFrontPage ? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight;
             let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
@@ -50,7 +54,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
             if (hero && heroContent) {
                 const startZero = Math.max(scrollTop - headerHeight, 0),
                     scrollTopHero = isSmall ? startZero : easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
-                    opacity = 1 - easeOutQuad(startZero, 0, 1, maxScroll);
+                    opacity = 1 - easeOutQuad(startZero, 0, 1, isSmall ? maxScroll * 1.5 : maxScroll);
                 hero.style.cssText += `
                 transform:translate3d(0,-${scrollTopHero}px,0);
                 -webkit-transform:translate3d(0,-${scrollTopHero}px,0);`;
@@ -61,21 +65,20 @@ global.document.addEventListener('DOMContentLoaded', () => {
                 -webkit-transform:translate3d(0,${scrollDownHeroContent}px,0);
                 opacity:${opacity};`;
             }
+            if(!isSmall) {
+                logo.style.cssText += `opacity:${opacity};
+                transform:translate3d(0,${move}px,0);
+                -webkit-transform:translate3d(0,${move}px,0);`;
 
+                logoBar.style.cssText += `
+            opacity:${opacityEase};
+            transform:translateY(${moveIn}px) rotate(${angel * -1}deg) scale(.93);
+            -webkit-transform:translateY(${moveIn}px) rotate(${angel * -1}deg) scale(.93);`;
+            }
             // 2) apply to styles
             header.style.cssText += `
                 transform:translate3d(0,-${scrollTop}px,0);
                 -webkit-transform:translate3d(0,-${scrollTop}px,0);`;
-
-            logo.style.cssText += `opacity:${opacity};
-                transform:translate3d(0,${move}px,0);
-                -webkit-transform:translate3d(0,${move}px,0);`;
-
-            logoBar.style.cssText += `
-            opacity:${opacityEase};
-            transform:translateY(${moveIn}px) rotate(${angel * -1}deg) scale(.93);
-            -webkit-transform:translateY(${moveIn}px) rotate(${angel * -1}deg) scale(.93);`;
-
         });
     }
 
