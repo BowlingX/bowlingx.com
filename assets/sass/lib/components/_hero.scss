@@ -3,45 +3,52 @@
 */
 
 .hero {
-  min-height:100vh;
-  background:#D2D98D;
+  min-height: 100vh;
+  background: #D2D98D;
   position: fixed;
-  width:100%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   padding: 2rem;
-  text-align:center;
+  text-align: center;
   h1 {
-    margin:1rem auto;
-    font-weight:200;
-    line-height:1.3;
+    margin: 1rem auto;
+    font-weight: 200;
+    line-height: 1.3;
   }
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .front-page .header {
-  top:100vh;
+  top: 100vh;
 }
 
 .animation-wrapper {
-  max-width:470px;
+  max-width: 470px;
 }
 
-.front-page header+.overall-wrapper>.content-wrapper .wrapper-center {
-  margin-top:calc(100vh + #{$topbarHeight});
+.front-page header + .overall-wrapper > .content-wrapper .wrapper-center {
+  margin-top: calc(100vh + #{$topbarHeight});
 }
 
 .front-page .topbar {
-  background:$topbarBg;
+  background: $topbarBg;
+}
+
+@media #{$mediaSmall} {
+  // fix for android header in the bottom when scrolling
+  .front-page .header {
+    background: transparent;
+  }
 }
 
 @media #{$mediaDesktop} {
 
   .hero h1 {
-    max-width:50%;
+    max-width: 50%;
   }
-  .front-page header+.overall-wrapper>.content-wrapper .wrapper-center {
-    margin-top:calc(100vh + #{$topbarHeightDesktop});
+  .front-page header + .overall-wrapper > .content-wrapper .wrapper-center {
+    margin-top: calc(100vh + #{$topbarHeightDesktop});
   }
 }
