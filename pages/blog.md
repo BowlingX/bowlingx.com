@@ -1,5 +1,5 @@
 ---
 layout: default
 title: Blog
-weight: 2
+weight: 3
 ---

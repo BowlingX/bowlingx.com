@@ -49,7 +49,7 @@
     }
 
     .scroll-down {
-      @include animate(scrollDownPlease, 2s);
+      @include animate(scrollDownPlease, 4s);
       animation-delay: 2.5s;
     }
   }
@@ -88,7 +88,7 @@
   max-width: 470px;
 }
 
-.hero-page header + .overall-wrapper > .content-wrapper .wrapper-center {
+.hero-page header + .overall-wrapper > .content-wrapper .wrapper {
   margin-top: calc(100vh + #{$topbarHeight});
 }
 
@@ -108,7 +108,7 @@
   .hero h1 {
     max-width: 50%;
   }
-  .hero-page header + .overall-wrapper > .content-wrapper .wrapper-center {
+  .hero-page header + .overall-wrapper > .content-wrapper .wrapper {
     margin-top: calc(100vh + #{$topbarHeightDesktop});
   }
 }

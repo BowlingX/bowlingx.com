@@ -5,55 +5,12 @@ weight: 1
 class: hero-page
 ---
 
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
-
-# Content
+<div class="skill-hero">
+<div class="wrapper-center">
+  <div class="page-content">
+  
+  </div>
+</div>
+</div>
 
 

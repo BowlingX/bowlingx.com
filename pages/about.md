@@ -1,5 +1,5 @@
 ---
 layout: default
 title: About me
-weight: 2
+weight: 4
 ---

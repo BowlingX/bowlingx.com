@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Projects
+title: Work
 weight: 2
 ---
