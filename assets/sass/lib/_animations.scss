@@ -39,3 +39,20 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+@include keyframes(scrollDownPlease) {
+  0% {
+    opacity:0;
+    transform: translate3d(0, -10px, 0);
+  }
+
+  50% {
+    opacity:1;
+    transform: translate3d(0, 0px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+}
