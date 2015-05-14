@@ -59,7 +59,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
             // a) if there exists an hero page before
             if(hero && heroContent) {
                 const startZero = Math.max(scrollTop - headerHeight, 0),
-                    scrollTopHero = easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
+                    scrollTopHero = isSmall ? startZero : easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
                     opacity = 1 - easeOutQuad(startZero, 0, 1, maxScroll);
                 hero.style.cssText += `
                 transform:translate3d(0,-${scrollTopHero}px,0);
