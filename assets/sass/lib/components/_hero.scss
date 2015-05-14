@@ -30,8 +30,8 @@
     transition:opacity 0s ease;
 
     h1 {
-      @include animate(textDrop, .5s);
-      animation-delay: 2.2s;
+      @include animate(textDrop, 1s);
+      animation-delay: 2.4s;
     }
   }
   .hero-page {
