@@ -113,13 +113,17 @@
   }
 }
 
-@media (max-width:  #{$breakpointDesktop - 1px}) and (orientation:landscape) {
+@media (max-width: #{$breakpointDesktop - 1px}) and (orientation: landscape) {
   .animation-wrapper {
     max-width: 250px;
   }
-  .hero h1 {
-    max-width: 75%;
-    margin-top:.5rem;
-    font-size: $baseFontSize;
+  .hero {
+    padding:1rem;
+    align-items:flex-start;
+    h1 {
+      max-width: 75%;
+      margin-top: .5rem;
+      font-size: $baseFontSize;
+    }
   }
 }
