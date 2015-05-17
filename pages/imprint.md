@@ -12,9 +12,6 @@ David Heidrich <br>
     Nixenstrasse 47<br>
     40591 Düsseldorf <br>
 
-**Vertreten durch:**<br>
-    David Heidrich
-
 **Kontakt:**<br>
 Telefon: +49 151 27527147<br>
 E-Mail: me@bowlingx.com

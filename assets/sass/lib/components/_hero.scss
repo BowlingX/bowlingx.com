@@ -29,10 +29,10 @@
   &:before {
     content: ' ';
     position: fixed;
-    bottom: 0;
+    top: 0;
     width: 100%;
     background: rgba($brandPrimary, .7);
-    height: 5px;
+    height: 3px;
     z-index: 1;
     @include animate(preloadHalf, 1s);
   }
@@ -55,7 +55,7 @@
   }
   .hero-page {
     &:before {
-      @include animate(preloadFull, .8s);
+      @include animate(preloadFull, .5s);
     }
   }
 }
