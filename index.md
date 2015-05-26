@@ -8,7 +8,8 @@ class: hero-page
 <div class="skill-hero">
 <div class="wrapper-center">
   <div class="page-content">
-  
+    <h1 class="thin text-centered">...be patient, my website will be ready soon :), in the meantime checkout my 
+    <a href="https://github.com/BowlingX">GitHub Projects</a></h1>
   </div>
 </div>
 </div>

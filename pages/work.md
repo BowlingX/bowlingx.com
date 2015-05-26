@@ -1,5 +1,5 @@
 ---
 layout: default
 title: Work
-weight: 2
+weight: 0
 ---

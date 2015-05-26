@@ -13,8 +13,8 @@ body {
   }
 }
 
-// links in paragraphs
-p {
+// links in paragraphs and headlines
+p, h1, h2 {
   a {
     border-bottom:2px solid rgba($primaryColor, .3);
     transition:color $globalShortEaseTime ease, border-color $globalShortEaseTime ease;
@@ -29,6 +29,9 @@ p + h2 {
   margin-top:2rem;
 }
 
+.thin {
+  font-weight:100;
+}
 
 .font-large {
   font-size:2rem;
