@@ -1,25 +1,51 @@
+/* global clearTimeout*/
+
+'use strict';
+
 import OffCanvas from 'flexcss/src/main/OffCanvas';
 
 global.document.addEventListener('DOMContentLoaded', () => {
-    "use strict";
 
     // Create of canvas navigation
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
 
+    let isSmall, header, scrollDownHeroDuration, headerHeight;
     const
         desktopBreakpoint = 768,
-        isSmall = window.innerWidth < desktopBreakpoint,
-        header = isSmall ? document.getElementById('TopBar') : document.getElementById('Header'),
         logoBar = document.getElementById('Logo-bar'),
         logo = document.getElementById('Logo'),
         hero = document.getElementById('Hero'),
         heroContent = document.getElementById('HeroContent'),
         headerNavHeight = 50,
-        headerHeight = header.getBoundingClientRect().height,
         isHeroPage = document.body.classList.contains('hero-page'),
     // easing vars:
-        scrollDownHeroDuration = isSmall ? headerHeight * 20 : headerHeight * 2,
         scrollDownHeroMax = 320;
+
+
+    function calcScreenDelta() {
+        requestAnimationFrame(() => {
+            const topBar = document.getElementById('TopBar'), headerBar = document.getElementById('Header');
+            isSmall = window.innerWidth < desktopBreakpoint;
+            header = isSmall ? topBar : headerBar;
+            headerHeight = header.getBoundingClientRect().height;
+            scrollDownHeroDuration = isSmall ? headerHeight * 20 : headerHeight * 2;
+            if (isSmall) {
+                headerBar.style.cssText = '';
+            } else {
+                topBar.style.cssText = '';
+            }
+        });
+    }
+
+    // detect screen size changes
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calcScreenDelta();
+            initScroll();
+        }, 250);
+    });
 
     // easing function to use for parallax effects
     function easeInQuad(t, b, c, d) {
@@ -57,7 +83,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
             // a) if there exists an hero page before
             if (hero && heroContent) {
                 const startZero = Math.max(scrollTop - headerHeight, 0),
-                    scrollTopHero = isSmall ? startZero +1 : easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
+                    scrollTopHero = isSmall ? startZero + 1 : easeOutQuad(startZero, 0, siteHeight, siteHeight * 1.2),
                     heroOpacity = 1 - easeOutQuad(startZero, 0, 1, isSmall ? maxScroll * 1.5 : maxScroll);
                 hero.style.cssText += `
                 transform:translate3d(0,-${scrollTopHero}px,0);
@@ -71,7 +97,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
             }
 
             // b) if the screen is not small, we move the logo around
-            if(!isSmall) {
+            if (!isSmall) {
                 logo.style.cssText += `opacity:${opacity};
                 transform:translate3d(0,${move}px,0);
                 -webkit-transform:translate3d(0,${move}px,0);`;
@@ -89,6 +115,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    calcScreenDelta();
     initScroll();
     global.window.addEventListener('scroll', initScroll, true);
 });
