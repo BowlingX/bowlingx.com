@@ -1,0 +1,20 @@
+
+.hero-content-blog {
+
+  h1 {
+    @include animate(textDrop);
+    font-size: 4rem;
+    color: $brandPrimary;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    @include animate(textDrop);
+    animation-delay: .2s;
+    font-weight: 100;
+    font-size: 1.5rem;
+    border-top: 1px solid $brandPrimary;
+    padding-top: .5rem;
+  }
+
+}

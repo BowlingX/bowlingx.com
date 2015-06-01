@@ -14,7 +14,7 @@ body {
 }
 
 // links in paragraphs and headlines
-p, h1, h2 {
+p, h1, h2, h3 {
   a {
     border-bottom:2px solid rgba($primaryColor, .3);
     transition:color $globalShortEaseTime ease, border-color $globalShortEaseTime ease;
@@ -25,14 +25,26 @@ p, h1, h2 {
 }
 
 // headline following a paragraph
+p + h3,
 p + h2 {
   margin-top:2rem;
 }
 
+h3 {
+  font-size:$baseFontSize;
+}
+
+h4 {
+  font-size:$baseFontSize - 2px;
+}
 .thin {
   font-weight:100;
 }
 
 .font-large {
   font-size:2rem;
+}
+
+.bordered {
+  border-bottom:1px solid $globalBorderColor;
 }

@@ -2,6 +2,13 @@
 * Base Settings
 */
 
+
+
+$brandPrimary: #D95151;
+$brandSecondary:#D2D98D;
+$brandAlternate: #006A75;
+$backgroundColor:#fff;
+
 // Navigation and Sidebar when in mobile state (left + right)
 $MainNavigationWidth: 250px !default;
 $MainSidebarWidth: 265px !default;
@@ -22,7 +29,7 @@ $topbarColorWide:#aaa !default;
 $footerHeight:100px !default;
 
 // maximum site width (before staying centered layout)
-$overallMaxWidth:1000px !default;
+$overallMaxWidth:1150px !default;
 
 // a base padding, used by various components
 $overallPadding:10px !default;
@@ -52,7 +59,7 @@ $globalHoverColor:#f8f8f8 !default;
 // subnav
 $subnavBg: $lightGrayColor !default;
 
-$smallFontSize:12px !default;
+$smallFontSize:14px !default;
 $smallFontSizeLineHeight:1.5 !default;
 $extraSmallFontSize:$smallFontSize !default;
 
@@ -71,7 +78,7 @@ $headingMargin: 0 0 1rem 0 !default;
 
 $primaryColor:#258db8 !default;
 $secondaryColor:#e6007e !default;
-$actionColor:#83ba5e !default;
+$actionColor:$brandPrimary !default;
 $alertColor: #d84c3d !default;
 $dangerColor:#f08201 !default;
 $successColor:#43A047 !default;
@@ -134,7 +141,8 @@ $labelColor: $baseColor !default;
 $labelFontSize: $smallFontSize !default;
 $labelPaddingDesktop:5px 1rem 0 0 !default;
 $inputHeight:35px !default;
-$formMargin:30px !default;
+$formMargin:10px !default;
+$formMarginDesktop: 10px !default;
 $formMinWidthControls:330px !default;
 $appendMargin:20px !default;
 // append Margins for different states (last-child etc.)
@@ -164,7 +172,7 @@ $labelTextAlign:right !default;
 $copyTextFormsFontSize:$smallFontSize!default;
 $copyTextFormsLineHeight:$smallFontSizeLineHeight !default;
 $copyTextFormsMultipleMarginTop: .5rem !default;
-$inputFontSize:$baseFontSize !default;
+$inputFontSize: $smallFontSize !default;
 $inputTransitions: background .5s ease !default;
 $checkboxMargin: 0px 0 0 28px;
 $disabledThumbColor: lighten($lighterGrayColor, 10%);
@@ -246,9 +254,3 @@ $listingSmallWidth: 30%;
 // panel
 $panelBackground: $lightGrayColor;
 $linkFontWeight: normal;
-
-
-$brandPrimary: #D95151;
-$brandSecondary:#D2D98D;
-$brandAlternate: #006A75;
-$backgroundColor:#fff;

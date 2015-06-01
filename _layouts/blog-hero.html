@@ -1,0 +1,16 @@
+{% include header.html %}
+<div class="content-wrapper">
+    <div id="Hero" class="hero {{page.title-class}}">
+        <div class="hero-content-blog" id="HeroContent">
+            <h1>{{page.title}}</h1>
+            <h2 class="subtitle">{{page.excerpt}}</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-center flex">
+        <div class="page-content first-column">
+            {{ content }}
+        </div>
+        {% include second-column.html %}
+    </div>
+</div>
+{% include footer.html %}

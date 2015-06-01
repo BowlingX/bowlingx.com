@@ -105,7 +105,7 @@
 
 @media #{$mediaDesktop} {
 
-  .hero h1 {
+  .hero .hero-content h1 {
     max-width: 50%;
   }
   .hero-page header + .overall-wrapper > .content-wrapper .wrapper {
@@ -118,12 +118,15 @@
     max-width: 250px;
   }
   .hero {
-    padding:1rem;
-    align-items:flex-start;
-    h1 {
-      max-width: 75%;
-      margin-top: .5rem;
-      font-size: $baseFontSize;
+    padding: 1rem;
+    align-items: flex-start;
+
+    .hero-content {
+      h1 {
+        max-width: 75%;
+        margin-top: .5rem;
+        font-size: $baseFontSize;
+      }
     }
   }
 }

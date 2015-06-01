@@ -10,6 +10,8 @@ class: hero-page
   <div class="page-content">
     <h2 class="thin text-centered">...be patient, my website will be ready soon :), in the meantime checkout my 
     <a href="https://github.com/BowlingX">GitHub Projects</a></h2>
+    
+    {% include latest-posts.md %}
   </div>
 </div>
 </div>

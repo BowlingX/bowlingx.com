@@ -2,14 +2,18 @@
 @import 'settings';
 @import 'flexcss/assets/base';
 @import "flexcss/assets/lib/text";
+@import "flexcss/assets/lib/code";
 @import "flexcss/assets/lib/grid";
 @import "flexcss/assets/lib/navigation";
 @import "flexcss/assets/lib/desktop-grid";
 @import "flexcss/assets/lib/large-grid";
 @import "flexcss/assets/lib/visibility";
-
+@import "flexcss/assets/lib/forms";
+@import "flexcss/assets/lib/buttons";
 @import 'flexcss/assets/lib/themes/fullwidth/grid';
+@import 'flexcss/assets/lib/tooltip';
 
+// bowlingx.com
 @import 'lib/darkener';
 @import 'lib/header';
 @import 'lib/global-elements';
@@ -17,6 +21,9 @@
 @import 'lib/components/hero';
 @import 'lib/animations';
 @import 'lib/components/sub-heros';
+
+@import 'lib/components/blog-heros';
+@import 'lib/highlighting';
 
 @media #{$mediaDesktop} {
   .page-content {

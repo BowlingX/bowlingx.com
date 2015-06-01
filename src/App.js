@@ -3,11 +3,13 @@
 'use strict';
 
 import OffCanvas from 'flexcss/src/main/OffCanvas';
+import Form from 'flexcss/src/main/Form';
 
 global.document.addEventListener('DOMContentLoaded', () => {
 
     // Create of canvas navigation
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
+    Form.init('form');
 
     let isSmall, header, scrollDownHeroDuration, headerHeight;
     const
@@ -17,6 +19,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
         hero = document.getElementById('Hero'),
         heroContent = document.getElementById('HeroContent'),
         headerNavHeight = 50,
+        stageElement = document.getElementById('Stage'),
         isHeroPage = document.body.classList.contains('hero-page'),
     // easing vars:
         scrollDownHeroMax = 320;
@@ -57,10 +60,17 @@ global.document.addEventListener('DOMContentLoaded', () => {
         return -c * (t /= d) * (t - 2) + b;
     }
 
-    // detect animation ready
-    document.addEventListener('compositionReady', () => {
-        document.documentElement.classList.add('composition-ready');
-    }, true);
+    const cls = document.documentElement.classList;
+
+    if(stageElement) {
+        // detect animation ready
+        document.addEventListener('compositionReady', () => {
+            cls.add('composition-ready');
+        }, true);
+    } else {
+        cls.add('composition-ready');
+        cls.add('without-stage');
+    }
 
     function initScroll() {
         requestAnimationFrame(() => {
