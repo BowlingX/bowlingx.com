@@ -4,7 +4,9 @@
     @include animate(textDrop);
     font-size: 4rem;
     color: $brandPrimary;
+    margin-top:0;
     margin-bottom: 0;
+    line-height:1;
   }
 
   h2 {
@@ -14,6 +16,7 @@
     font-size: 1.5rem;
     border-top: 1px solid $brandPrimary;
     padding-top: .5rem;
+    margin-bottom:0;
   }
 
 }
