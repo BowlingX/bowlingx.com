@@ -62,7 +62,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
 
     const cls = document.documentElement.classList;
 
-    if(stageElement) {
+    if (stageElement) {
         // detect animation ready
         document.addEventListener('compositionReady', () => {
             cls.add('composition-ready');
@@ -72,7 +72,15 @@ global.document.addEventListener('DOMContentLoaded', () => {
         cls.add('without-stage');
     }
 
+    let tick = false;
+
     function initScroll() {
+        if (tick) {
+            return;
+        }
+        tick = true;
+
+        // checkout: http://www.html5rocks.com/en/tutorials/speed/animations/
         requestAnimationFrame(() => {
             // 0) calculations based on scrollTop
             // unfortunately we need to request the inner height here because on android/ios devices
@@ -80,7 +88,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
 
             const siteHeight = window.innerHeight,
                 maxScroll = isHeroPage ? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight;
-            let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            let scrollTop = window.scrollY;
             scrollTop = Math.max(scrollTop < maxScroll ? scrollTop : maxScroll, 0);
 
             // 1) parallax calculations
@@ -122,6 +130,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
             header.style.cssText += `
                 transform:translate3d(0,-${scrollTop}px,0);
                 -webkit-transform:translate3d(0,-${scrollTop}px,0);`;
+            tick = false;
         });
     }
 
