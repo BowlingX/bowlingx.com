@@ -9,7 +9,7 @@ class: hero-page
 {% include offers.html %}
 
 <div class="wrapper-center">
-  <div class="page-content">
+  <div class="feature-slim">
     {% include latest-posts.md %}
   </div>
 </div>

@@ -3,11 +3,15 @@
     <div id="Hero" class="hero {{page.title-class}}">
         <div class="hero-content-blog" id="HeroContent">
             <h1>{{page.title}}</h1>
+
             <h2 class="subtitle">{{page.excerpt}}</h2>
         </div>
     </div>
     <div class="wrapper wrapper-center flex">
         <div class="page-content first-column">
+            {% if page.draft == true%}
+            <p class="panel alert double-space"><i class="icon-attention"></i> This is a draft version.</p>
+            {% endif %}
             {{ content }}
         </div>
         {% include second-column.html %}

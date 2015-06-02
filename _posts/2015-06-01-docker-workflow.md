@@ -3,7 +3,8 @@ layout: blog-hero
 title: A Docker-Workflow
 class: hero-page
 title-class: docker
-excerpt: creating a web-development environment for all stages
+draft: true
+excerpt: Creating a web-development environment for all stages.
 ---
 
 ## One setup fits them all 
@@ -29,3 +30,4 @@ MAINTAINER David Heidrich (me@bowlingx.com)
 ENV DEV_ENV dev
 
 {% endhighlight %}
+

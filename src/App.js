@@ -4,12 +4,17 @@
 
 import OffCanvas from 'flexcss/src/main/OffCanvas';
 import Form from 'flexcss/src/main/Form';
+import Modal from 'flexcss/src/main/Modal';
+import Settings from 'flexcss/src/main/util/Settings';
 
 global.document.addEventListener('DOMContentLoaded', () => {
 
     // Create of canvas navigation
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
     Form.init('form');
+
+    Settings.setup({scrollbarUpdateNodes: [document.body, document.getElementById('Header')]});
+    new Modal(document.body, {fixedContainer:false}).registerEvents();
 
     let isSmall, header, scrollDownHeroDuration, headerHeight;
     const

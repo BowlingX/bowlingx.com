@@ -4,6 +4,8 @@
     margin-top: -#{$topbarHeightDesktop};
     padding: $offerPadding + $topbarHeightDesktop $offerPadding $offerPadding;
   }
+
+
 }
 
 .offer {
@@ -22,12 +24,32 @@
   }
 }
 
+
+.feature-slim {
+  padding: 2rem 1rem;
+}
+
 .offers {
   z-index: 1;
 }
 
 .offer:nth-child(2) {
   background: darken(#f1f1f1, 6%);
+}
+
+.offer h2 {
+  position: relative;
+  display: block;
+  i {
+    position: absolute;
+    left: -2rem;
+    color:lighten($grayColor, 15%);
+  }
+}
+
+.flex-center {
+  display:flex;
+  justify-content: center;
 }
 
 @media #{$mediaSmall} {

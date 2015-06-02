@@ -76,7 +76,7 @@ $h1DesktopFontSize:25px !default;
 $h1Color: $baseColor !default;
 $headingMargin: 0 0 1rem 0 !default;
 
-$primaryColor:#258db8 !default;
+$primaryColor:$brandPrimary !default;
 $secondaryColor:#e6007e !default;
 $actionColor:$brandPrimary !default;
 $alertColor: #d84c3d !default;
@@ -172,7 +172,7 @@ $labelTextAlign:right !default;
 $copyTextFormsFontSize:$smallFontSize!default;
 $copyTextFormsLineHeight:$smallFontSizeLineHeight !default;
 $copyTextFormsMultipleMarginTop: .5rem !default;
-$inputFontSize: $smallFontSize !default;
+$inputFontSize: 16px !default;
 $inputTransitions: background .5s ease !default;
 $checkboxMargin: 0px 0 0 28px;
 $disabledThumbColor: lighten($lighterGrayColor, 10%);
@@ -187,7 +187,7 @@ $btnFontSize:$baseFontSize !default;
 $btnPadding: 11px 45px 10px !default;
 $btnBackgroundSize:40px 40px !default;
 $btnSmallPadding:7px 30px 7px !default;
-
+$btnFontWeight: 500 !default;
 // tabs
 $tabBottomLineHeight:2px !default;
 $tabsSmallPadding: 5px !default;
@@ -258,3 +258,8 @@ $linkFontWeight: normal;
 $topbarActionFontWeight:500;
 $topbarNavActiveFontWeight: 500;
 $subnavActiveFontWeight: 500;
+
+$darkenerColor:#fff;
+$darkenerFadeOpacity:.9;
+$modalBoxShadow:none;
+$modalBackground:transparent;

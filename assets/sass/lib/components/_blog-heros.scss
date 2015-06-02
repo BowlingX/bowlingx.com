@@ -11,7 +11,7 @@
 
   h2 {
     @include animate(textDrop);
-    animation-delay: .2s;
+    animation-delay: .3s;
     font-weight: 100;
     font-size: 1.5rem;
     border-top: 1px solid $brandPrimary;
