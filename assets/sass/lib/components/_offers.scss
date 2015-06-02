@@ -1,0 +1,41 @@
+@media #{$mediaDesktop} {
+
+  .offer {
+    margin-top: -#{$topbarHeightDesktop};
+    padding: $offerPadding + $topbarHeightDesktop $offerPadding $offerPadding;
+  }
+}
+
+.offer {
+  flex: 1;
+
+  p {
+    margin-bottom: 0;
+  }
+  background: #f1f1f1;
+  z-index: -1;
+
+  h2 {
+    font-size: 1.5rem;
+    color: $brandPrimary;
+    font-weight: 300;
+  }
+}
+
+.offers {
+  z-index: 1;
+}
+
+.offer:nth-child(2) {
+  background: darken(#f1f1f1, 6%);
+}
+
+@media #{$mediaSmall} {
+  .offer {
+    padding: $offerPadding;
+    &:first-child {
+      margin-top: -#{$topbarHeightDesktop};
+      padding-top: $offerPadding + $topbarHeightDesktop;
+    }
+  }
+}

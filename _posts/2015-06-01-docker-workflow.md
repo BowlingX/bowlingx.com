@@ -13,7 +13,7 @@ Since I started with docker a few month ago, I wondered how to archive the follo
 Having a simple development setup and deploy the same to a _staging_ environment without loosing the ability to
 have my changes reflected immediately and without rebuilding the container(s) all the time during development.
 
-A Simple but effective way to do this is using **`ENV`** in combination with **`VOLUME`**.
+A simple but effective way to do this is using **`ENV`** in combination with **`VOLUME`**.
 
 ### Dockerize a simple PHP-Application
 

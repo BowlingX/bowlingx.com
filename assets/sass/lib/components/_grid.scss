@@ -1,4 +1,6 @@
 // basic grid for desktop
+$offerPadding: 70px;
+
 @media #{$mediaDesktop} {
 
   .flex {
@@ -7,21 +9,22 @@
   }
   .first-column {
     max-width: calc(70% - 1rem);
-    min-width:0;
+    min-width: 0;
     margin-right: 1rem;
-    flex:1;
+    flex: 1;
   }
 
   .second-column {
     max-width: calc(30% - 1rem);
-    min-width:300px;
+    min-width: 300px;
     margin-right: 1rem;
-    flex:auto;
+    flex: auto;
     .page-content {
       padding-left: 0;
       padding-right: 0;
     }
   }
+
 }
 
 .second-column {

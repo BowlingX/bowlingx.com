@@ -1,23 +1,23 @@
 body {
-  background:$backgroundColor;
+  background: $backgroundColor;
 }
 
 // page footer
 .footer {
-  background:$brandPrimary;
-  color:#fff;
-  padding:20px 0;
+  background: $brandPrimary;
+  color: #fff;
+  padding: 20px 0;
   a {
     @include link-color(lighten($brandPrimary, 25%));
-    border-bottom:none;
+    border-bottom: none;
   }
 }
 
 // links in paragraphs and headlines
 p, h1, h2, h3 {
   a {
-    border-bottom:2px solid rgba($primaryColor, .3);
-    transition:color $globalShortEaseTime ease, border-color $globalShortEaseTime ease;
+    border-bottom: 2px solid rgba($primaryColor, .3);
+    transition: color $globalShortEaseTime ease, border-color $globalShortEaseTime ease;
     &:hover {
       border-bottom-color: rgba($primaryColor, .8);
     }
@@ -27,24 +27,43 @@ p, h1, h2, h3 {
 // headline following a paragraph
 p + h3,
 p + h2 {
-  margin-top:2rem;
+  margin-top: 2rem;
 }
 
 h3 {
-  font-size:$baseFontSize;
+  font-size: $baseFontSize;
 }
 
 h4 {
-  font-size:$baseFontSize - 2px;
+  font-size: $baseFontSize - 2px;
 }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 500;
+}
+
+p {
+  font-weight: 300;
+  > strong {
+    font-weight: 500;
+    > code {
+      font-weight: 700;
+    }
+  }
+}
+
 .thin {
-  font-weight:100;
+  font-weight: 100;
 }
 
 .font-large {
-  font-size:2rem;
+  font-size: 2rem;
 }
 
 .bordered {
-  border-bottom:1px solid $globalBorderColor;
+  border-bottom: 1px solid $globalBorderColor;
+}
+
+.highlighttable {
+  font-size:.9rem;
 }
