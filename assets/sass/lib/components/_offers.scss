@@ -1,11 +1,8 @@
 @media #{$mediaDesktop} {
-
   .offer {
     margin-top: -#{$topbarHeightDesktop};
     padding: $offerPadding + $topbarHeightDesktop $offerPadding $offerPadding;
   }
-
-
 }
 
 .offer {
@@ -15,7 +12,6 @@
     margin-bottom: 0;
   }
   background: #f1f1f1;
-  z-index: -1;
 
   h2 {
     font-size: 1.5rem;
@@ -24,13 +20,8 @@
   }
 }
 
-
 .feature-slim {
   padding: 2rem 1rem;
-}
-
-.offers {
-  z-index: 1;
 }
 
 .offer:nth-child(2) {
