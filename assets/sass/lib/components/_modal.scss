@@ -1,6 +1,10 @@
 
 .modal {
   padding: 50px 10px 10px;
+
+  &.plain {
+    padding:10px;
+  }
 }
 
 @media #{$mediaSmall} {

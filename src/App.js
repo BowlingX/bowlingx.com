@@ -6,15 +6,17 @@ import OffCanvas from 'flexcss/src/main/OffCanvas';
 import Form from 'flexcss/src/main/Form';
 import Modal from 'flexcss/src/main/Modal';
 import Settings from 'flexcss/src/main/util/Settings';
+import Util from 'flexcss/src/main/util/Util';
+import Widget from 'flexcss/src/main/Widget';
 
 global.document.addEventListener('DOMContentLoaded', () => {
 
     // Create of canvas navigation
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
-    Form.init('form');
+    Form.init('form', {fetchOptions: {includeCredentials: false}});
 
     Settings.setup({scrollbarUpdateNodes: [document.body, document.getElementById('Header')]});
-    new Modal(document.body, {fixedContainer:false}).registerEvents();
+    new Modal(document.body, {fixedContainer: false}).registerEvents();
 
     let isSmall, header, scrollDownHeroDuration, headerHeight;
     const
@@ -28,6 +30,16 @@ global.document.addEventListener('DOMContentLoaded', () => {
         isHeroPage = document.body.classList.contains('hero-page'),
     // easing vars:
         scrollDownHeroMax = 320;
+
+    document.addEventListener('flexcss.form.ajaxCompleted', function(e){
+        // reset form:
+        const form = e.detail.originalEvent.target;
+        form.reset();
+        // close modal:
+        let modalContainer = Util.parentsUntil(form, (n) => n.classList.contains('modal')),
+        modal = Widget.findWidget(modalContainer);
+        modal.fromWidget(document.getElementById('contact-success'));
+    });
 
 
     function calcScreenDelta() {

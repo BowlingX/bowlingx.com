@@ -27,27 +27,35 @@
 
 <div class="modal center" id="contact-modal">
     <i data-close-modal="" class="modal-close icon-cancel-1 double-space"></i>
-    
-    <form class="wide">
+
+    <form class="wide" action="//formspree.io/me@bowlingx.com" method="POST" data-remote>
         <fieldset>
             <div class="control-group">
                 <div class="controls">
-                    <input type="text" required placeholder="Your Name">
+                    <input type="text" name="name" required placeholder="Your Name">
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <input type="email" required placeholder="Your E-Mail-Address">
+                    <input type="email" name="_replyto" required placeholder="Your E-Mail-Address">
                 </div>
             </div>
             <div class="control-group">
                 <div class="controls">
-                    <textarea required placeholder="What do you have in mind?"></textarea>
+                    <textarea required name="text" placeholder="What do you have in mind?"></textarea>
                 </div>
             </div>
         </fieldset>
         <div class="form-actions plain">
             <button type="submit" class="button">get in touch</button>
         </div>
+        <input type="text" name="_gotcha" style="display:none"/>
     </form>
+</div>
+
+<div class="modal center plain" id="contact-success">
+    <h2 class="color-primary">Thank You!</h2>
+
+    <p>Your message has successfully been delivered to me :). I'll be in touch!</p>
+    <button class="button" data-close-modal>close</button>
 </div>
