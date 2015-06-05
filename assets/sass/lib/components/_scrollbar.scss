@@ -1,0 +1,23 @@
+::-webkit-scrollbar-thumb {
+  background-color: $primaryColor;
+  &:hover {
+    background-color: rgba($primaryColor, .7);
+  }
+  &:active {
+    background-color: $primaryColor;
+  }
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: $lightGrayColor;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: rgba($primaryColor, .5);
+}
