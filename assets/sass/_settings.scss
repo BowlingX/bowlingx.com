@@ -8,6 +8,9 @@ $brandSecondary:#D2D98D;
 $brandAlternate: #006A75;
 $backgroundColor:#fff;
 
+$sidebarWidthLarge: calc(30% - 1rem);
+$sidebarWidthDesktop: calc(35% - 1rem);
+
 // Navigation and Sidebar when in mobile state (left + right)
 $MainNavigationWidth: 250px;
 $MainSidebarWidth: 265px;

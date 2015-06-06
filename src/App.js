@@ -13,7 +13,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
 
     // Create of canvas navigation
     new OffCanvas('MainNavigation', 'SidebarDarkener', -1).registerEvents();
-    Form.init('form', {fetchOptions: {includeCredentials: false}});
+    Form.init('form', {fetchOptions: {includeCredentials: false}, scrollToElementDiff:50});
 
     Settings.setup({scrollbarUpdateNodes: [document.body, document.getElementById('Header')]});
     new Modal(document.body, {fixedContainer: false}).registerEvents();
