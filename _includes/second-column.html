@@ -1,5 +1,14 @@
 <div class="second-column">
     <div class="page-content">
+        <div class="single-space">
+            <h4 class="tight text-tight">{{page.title}}</h4>
+            <time class="small-font fade-out" datetime="{{page.date}}"> Published: {{page.date | date: "%D"}}
+            </time>
+        </div>
+        <div class="single-space">
+            <h4 class="bordered">Share</h4>
+            <a href="http://twitter.com/intent/tweet?url={{site.url}}{{page.url}}&text={{ page.title }}" class="button action small outline"><i class="icon-twitter"></i></a>
+        </div>
         <h4 class="bordered">BowlingX Newsletter</h4>
 
         <p class="fade-out">Enjoying my articles? Keep updated with my newsletter. I promise I will never send SPAM!</p>
@@ -9,7 +18,8 @@
                 <div class="control-group">
                     <div class="controls">
                         <div class="append-input">
-                            <input aria-label="E-Mail-Address" placeholder="Your E-Mail-Address" required id="email" type="email"/>
+                            <input aria-label="E-Mail-Address" placeholder="Your E-Mail-Address" required id="email"
+                                   type="email"/>
                             <button type="submit" class="button small">subscribe</button>
                         </div>
                     </div>
