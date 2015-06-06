@@ -17,6 +17,10 @@ E-Mail: [me@bowlingx.com](mailto:me@bowlingx.com)
 **Steuernummer:**<br>
 106/5129/2852
 
+## Credits
+
+Thanks ♥ to [Roxy Velez](http://www.roxyvelez.com/) for the beautiful logo, animation and design inspirations.
+
 ## Haftungsausschluss 
 
 ### Haftung für Inhalte
