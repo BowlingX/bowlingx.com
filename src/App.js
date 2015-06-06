@@ -105,7 +105,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
 
             const siteHeight = window.innerHeight,
                 maxScroll = isHeroPage ? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight;
-            let scrollTop = window.scrollY;
+            let scrollTop = window.scrollY || window.pageYOffset;
             scrollTop = Math.max(scrollTop < maxScroll ? scrollTop : maxScroll, 0);
 
             // 1) parallax calculations
