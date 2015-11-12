@@ -51,13 +51,9 @@ global.document.addEventListener('DOMContentLoaded', () => {
     }
 
     // detect screen size changes
-    let resizeTimeout;
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            calcScreenDelta();
-            initScroll(window.pageYOffset);
-        }, 250);
+        calcScreenDelta();
+        initScroll(window.pageYOffset);
     });
 
     // easing function to use for parallax effects
