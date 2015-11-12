@@ -24,49 +24,87 @@
 
 var path = require("path");
 var webpack = require("webpack"), fs = require('fs');
+var AssetsPlugin = require('assets-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var glob = require('glob');
+
+var entries = {
+    'js/app': ['App'],
+    'css/layout': ['sass/layout.scss']
+};
+
 module.exports = {
     watch: false,
-    devtool: "source-map",
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
-                exclude: [/node_modules/],
                 include: [
                     path.resolve(__dirname, "src"),
-                    fs.realpathSync(path.resolve(__dirname, "node_modules/flexcss/src/main"))
+                    fs.realpathSync(path.resolve(__dirname, "node_modules/flexcss"))
                 ],
-                loader: 'babel-loader?optional=runtime&sourceMap=inline'
-
+                test: /\.jsx?$/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract(
+                    // activate source maps via loader query
+                    'css!' +
+                    'autoprefixer?browsers=last 2 versions!' +
+                    'sass?outputStyle=expanded&sourceMap=false'
+                )
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg|jpg|jpeg)$/,
+                loaders: [
+                    'url-loader?limit=1000',
+                    'image-webpack?{bypassOnDebug:true, progressive:true, optimizationLevel: 7, ' +
+                    'interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+                ]
             }
+
         ],
         preLoaders: [
+
             {
                 test: /\.js$/,
-                exclude: /node_modules/, // exclude any and all files in the node_modules folder
-                loader: "jshint-loader"
+                include: [
+                    path.resolve(__dirname, "main/assets/js")
+                ],
+                loader: "eslint-loader"
             }
         ]
     },
     resolve: {
-        // add bower components and main source to resolved
-        root: [path.join(__dirname, "bower_components"),
-            path.join(__dirname, 'src'),
-            path.join(__dirname, 'node_modules/flexcss/src/main')]
+        modulesDirectories: [
+            'assets/',
+            'src',
+            'src/main',
+            'node_modules'
+        ]
     },
-    entry: {
-        'app': ['App']
-    },
+    entry: entries,
     output: {
-        filename: '[name].min.js',
+        publicPath:'/build/',
+        path: __dirname + "/build",
+        filename: '[name].js',
         libraryTarget: 'umd',
-        library: 'App',
-        sourceMapFilename: '[name].min.map'
+        library: '[name]',
+        sourceMapFilename: 'js/[name].map',
+        chunkFilename: 'js/[id].js'
     },
     plugins: [
+        new webpack.EnvironmentPlugin(['NODE_ENV']),
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
         ),
-        new webpack.optimize.UglifyJsPlugin()
+        new ExtractTextPlugin('[name].css', {
+            allChunks: true
+        })
     ]
 };
+
+if(process.env.NODE_ENV === 'production') {
+    module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({sourceMap: false}));
+}

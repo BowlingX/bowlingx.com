@@ -68,13 +68,15 @@
     align-items: center;
     z-index: 0;
     .logo {
+      background:url(../img/logo.svg) no-repeat 0 3px;
+      background-size: 100% 100%;
       margin-left: 0;
       width: 300px;
       height: 100%;
     }
 
     .logo-bar {
-      background-image: url(../img/bowlingx-pin.svg) !important;
+      background: url(../img/bowlingx-pin.svg) no-repeat !important;
       width: 50px;
       position: absolute;
       left: 0px;
@@ -85,6 +87,8 @@
   }
 
   .header {
+    background: linear-gradient(to bottom,#333 0,#444 100%);
+
     &:before {
       content: ' ';
       background-color: $brandPrimary;

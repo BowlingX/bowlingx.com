@@ -7,15 +7,15 @@ title: Imprint
 
 BowlingX<br>
 David Heidrich <br>
-    Nixenstrasse 47<br>
-    40591 Düsseldorf <br>
+    Wöhlertstraße 20<br>
+    10115 Berlin <br>
 
 **Kontakt / Contact:**<br>
 Telefon / Phone: +49 151 27527147<br>
 E-Mail: [me@bowlingx.com](mailto:me@bowlingx.com)
 
 **Steuernummer:**<br>
-106/5129/2852
+34/336/00920
 
 ## Credits
 

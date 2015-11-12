@@ -12,7 +12,9 @@
             {% if page.draft == true%}
             <p class="panel alert double-space"><i class="icon-attention"></i> This is a draft version.</p>
             {% endif %}
-            {{ content }}
+            <div data-commentp="bowlingx.com">
+                {{ content }}
+            </div>
         </div>
         {% include second-column.html %}
     </div>

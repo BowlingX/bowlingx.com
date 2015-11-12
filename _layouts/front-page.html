@@ -17,23 +17,17 @@
      {{ content }}
     </div>
 </div>
-<script type="text/javascript" charset="utf-8" src="//animate.adobe.com/runtime/5.0.1/edge.5.0.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="//animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js"></script>
 <script>
     AdobeEdge.loadComposition('edge/bowlingx_logoanimation', 'EDGE-111619931', {
         scaleToFit: "both",
         centerStage: "horizontal",
-        minW: "0",
+        minW: "0px",
         maxW: "undefined",
         width: "655px",
         height: "216px",
-        bScaleToParent: true
-    }, {"dom": {}}, {
-        "style": {
-            "${symbolSelector}": {
-                "isStage": "true",
-                "rect": ["undefined", "undefined", "1065px", "276px"], "fill": ["rgba(255,255,255,1)"]
-            }
-        }, "dom": {}
-    });
+        bScaleToParent:true
+    }, {"dom":{}}, {"style":{"${symbolSelector}":
+    {"isStage":"true","rect":["undefined","undefined","1065px","276px"],"fill":["rgba(255,255,255,1)"]}},"dom":{}});
 </script>
 {% include footer.html %}
