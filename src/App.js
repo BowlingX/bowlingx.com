@@ -13,7 +13,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
     Settings.setup({scrollbarUpdateNodes: [document.body, document.getElementById('Header')]});
     new Modal(document.body, {fixedContainer: false}).registerEvents();
 
-    let isSmall, header, scrollDownHeroDuration, headerHeight;
+    let isSmall, header, scrollDownHeroDuration, headerHeight, siteHeight;
     const
         desktopBreakpoint = 768,
         logoBar = document.getElementById('Logo-bar'),
@@ -41,6 +41,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
         isSmall = window.innerWidth < desktopBreakpoint;
         header = isSmall ? topBar : headerBar;
         headerHeight = header.getBoundingClientRect().height;
+        siteHeight = window.innerHeight;
         scrollDownHeroDuration = isSmall ? headerHeight * 20 : headerHeight * 2;
         if (isSmall) {
             headerBar.style.cssText = '';
@@ -85,7 +86,7 @@ global.document.addEventListener('DOMContentLoaded', () => {
         // 0) calculations based on scrollTop
         // unfortunately we need to request the inner height here because on android/ios devices
         // the viewport changes when scrolling:
-        const siteHeight = window.innerHeight;
+
         const maxScroll = isHeroPage ? siteHeight + headerHeight - headerNavHeight : headerHeight - headerNavHeight;
         scrollTop = Math.max(scrollTop < maxScroll ? scrollTop : maxScroll, 0);
 
